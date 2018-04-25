@@ -1,5 +1,4 @@
 <?php
-namespace Qithub\Core;
 
 include_once('vendor/autoload.php');
 include_once('src/Functions.php');
@@ -23,10 +22,10 @@ class FunctionsTest extends TestCase
     /*
      * テストを行うメソッド名は「test*」
      */    
-    public function test_return_message()
+    public function testReturnMessage()
     {
         $message = 'Hello, World!';
-        $result  = return_message($message);
+        $result  = Qithub\Core\return_message($message);
 
         $this->assertTrue($result === 'Hello, World!');
     }
@@ -35,7 +34,7 @@ class FunctionsTest extends TestCase
     /*
      * 未実装・テスト準備済みは`markTestIncomplete(理由)`メソッドを使う
      */    
-    public function test_unknown()
+    public function testUnknown()
     {
         $this->markTestIncomplete('unknown関数は準備中です');        
     }

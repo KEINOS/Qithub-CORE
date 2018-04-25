@@ -1,5 +1,4 @@
 <?php
-namespace Qithub\Core;
 
 include_once('vendor/autoload.php');
 include_once('src/Functions.php');
@@ -26,11 +25,11 @@ class ClassesTest extends TestCase
     {
         $message = 'Hello, World!';
 
-        $result = MyClass::return_message($message);
+        $result = \Qithub\Core\MyClass::returnMessage($message);
         $this->assertTrue($result === $message);
 
-        $test    = new MyClass();
-        $result  = $test->return_message($message);
+        $test    = new \Qithub\Core\MyClass();
+        $result  = $test->returnMessage($message);
 
         $this->assertTrue($result === $message);
     }
