@@ -17,7 +17,8 @@ Qithub-CORE/
 	┣━ README.md （このファイル）
 	┣━ .git/ （このリポジトリの git 情報）
 	┣━ .gitignore/ （git 同期で除外するファイル／ディレクトリを指定）
-	┣━ .travis.yum （Travis CI の設定ファイル）
+	┣━ .travis.yum （Travis CI の設定ファイル。テスト・チェック）
+	┣━ sideci.yum （Side CI の設定ファイル。構文チェック）
 	┣━ composer.json （PHPUnit インストール用 Composer 設定ファイル）
 	┣━ composer.lock （検証時の Composer 環境再現ファイル）
 	┣━ src/ （メインとなるソースコード）
