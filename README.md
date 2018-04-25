@@ -1,4 +1,4 @@
-[![Build Status](https://travis-ci.org/Qithub-BOT/Qithub-CORE.svg?branch=master)](https://travis-ci.org/KEINOS/Practice_Travis-CI)
+[![Build Status](https://travis-ci.org/Qithub-BOT/Qithub-CORE.svg?branch=master)](https://travis-ci.org/Qithub-BOT/Qithub-CORE)
 
 ## このリポジトリについて
 
