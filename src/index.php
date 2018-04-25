@@ -9,7 +9,8 @@ $msg = 'Hello World!';
 echo return_message($msg) . PHP_EOL;
 
 /* Class */
-echo MyClass::return_message($msg) . PHP_EOL;
+echo MyClass::returnMessage($msg) . PHP_EOL;
 
 $test = new MyClass();
-$test->echo_message($msg); echo PHP_EOL;
+$test->echoMessage($msg);
+echo PHP_EOL;

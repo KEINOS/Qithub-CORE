@@ -2,13 +2,13 @@
 
 class MyClass
 {
-    public static function return_message($message)
+    public static function returnMessage($message)
     {
         return (string) $message;
     }
 
-    public function echo_message($message)
+    public function echoMessage($message)
     {
-        echo $this->return_message($message);
+        echo $this->returnMessage($message);
     }
 }
