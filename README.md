@@ -27,7 +27,7 @@ Qithub-CORE/
 	┗━ test/ （Travis CI で実行するテスト）
 		┣━ FunctionsTest.php
 		┗━ ClassesTest.php
-```	
+```
 
 ## ローカルに開発とテスト環境を作る
 
@@ -43,7 +43,7 @@ Qithub-CORE/
     - `$ composer install`
 1. `vendor` ディレクトリが出来たのを確認し、PHPUnit のバージョンを確認します。
     - `$ vendor/bin/phpunit --version`
-    
+
 ## テストを実行する
 
 1. `tests` ディレクトリ内のテストを実行する。
@@ -54,14 +54,8 @@ Qithub-CORE/
 
 以下の環境で動作した PHP スクリプトを Travis CI で PHPUnit テストを通します。
 
-- macOS High Sierra (OSX 10.13.4)
+- macOS High Sierra(OSX 10.13.4)
     - PHP 7.1.14 (cli)
 
 - PHPUnit v.5.7.27 via Composer
     - PHP 5.6, 7.0, 7.1 コンパチは PHPUnit 5 であるため
-
-
-
-
-
-
