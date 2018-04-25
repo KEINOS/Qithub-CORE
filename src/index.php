@@ -1,4 +1,5 @@
 <?php
+namespace Qithub\Core;
 
 include('Functions.php');
 include('Classes.php');

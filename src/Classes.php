@@ -1,4 +1,5 @@
 <?php
+namespace Qithub\Core;
 
 class MyClass
 {
