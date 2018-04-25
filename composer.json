@@ -1,0 +1,28 @@
+{
+    "name": "qithub-bot/qithub-core",
+    "description": "Core engine for Qithub BOT which calls Qithub commands",
+    "type": "library",
+    "license": "CC-BY-SA-4.0",
+    "authors": [
+        {
+            "name": "Qithub-ORG",
+            "email": "qithub@keinos.com"
+        }
+    ],
+    "repositories": [
+        {
+            "type": "vcs",
+            "url": "https://github.com/Qithub-BOT/Qithub-CMD"
+        }
+    ],
+    "minimum-stability": "dev",
+    "require": {
+        "qithub-bot/qithub-cmd": "dev-master"
+    },
+    "require-dev": {
+        "phpunit/phpunit": "5.7.27"
+    },
+    "conflict": {
+        "phpunit/php-timer": ">=2"
+    }
+}
