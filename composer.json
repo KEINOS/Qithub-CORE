@@ -23,5 +23,10 @@
     },
     "conflict": {
         "phpunit/php-timer": ">=2"
+    },
+    "extra": {
+        "asset-vcs-driver-options": {
+            "github-no-api": true
+        }        
     }
 }
