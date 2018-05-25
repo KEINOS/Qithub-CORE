@@ -1,6 +1,6 @@
 {
-    "name": "qithub-bot/qithub-core",
-    "description": "Core engine for Qithub BOT which calls Qithub commands",
+    "name": "qithub/core",
+    "description": "Core class for Qithub-BOT.",
     "type": "library",
     "license": "CC-BY-SA-4.0",
     "authors": [
@@ -10,7 +10,8 @@
         }
     ],
     "require-dev": {
-        "phpunit/phpunit": "5.7.27"
+        "phpunit/phpunit": "5.7.27",
+        "phpmd/phpmd": "@stable"
     },
     "conflict": {
         "phpunit/php-timer": ">=2"
