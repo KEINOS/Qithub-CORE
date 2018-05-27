@@ -1,12 +1,13 @@
 {
     "chmod": "0755",
-    "base-path": "../",
+    "base-path": "..\/",
     "directories": [
         "src"
     ],
-    "main": "src/index.php",
-    "output": "bin/Qithub-CORE.phar",
+    "main": "src\/index.php",
+    "output": "bin\/Qithub-CORE.phar",
     "stub": true,
+    "shebang": null,
     "git-version": "git_version",
     "git-commit": "git_commit_long",
     "git-commit-short": "git_commit_short",
