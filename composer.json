@@ -1,6 +1,8 @@
 {
-    "name": "qithub-bot/qithub-core",
-    "description": "Core engine for Qithub BOT which calls Qithub commands",
+    "name": "qithub/core",
+    "description": "Core library for Qithub BOT.",
+    "keywords": ["qithub","core"],
+    "homepage": "https://github.com/Qithub-BOT/Qithub-CORE",
     "type": "library",
     "license": "CC-BY-SA-4.0",
     "authors": [
@@ -14,5 +16,10 @@
     },
     "conflict": {
         "phpunit/php-timer": ">=2"
+    },
+    "autoload": {
+        "psr-0": {
+            "": "."
+        }
     }
 }
