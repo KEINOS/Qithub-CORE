@@ -1,5 +1,5 @@
 <?php
-namespace Qithub\Core;
+namespace Qithub\fn;
 
 function return_message($message)
 {

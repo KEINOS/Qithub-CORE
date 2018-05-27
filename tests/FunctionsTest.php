@@ -1,42 +1,40 @@
 <?php
 
 include_once('vendor/autoload.php');
-include_once('src/Functions.php');
+//include_once('src/Functions.php');
 
 use PHPUnit\Framework\TestCase;
 
-/*  PHP >= ^7.0 は PHPUnit ^6.0 であるため PHP >= ^5.6 の対応バージョン
- *  である PHPUnit 5.7.x の上位互換用の親クラスを継承
- *   ref: https://qiita.com/tanakahisateru/items/ef9f4c9b8ca39e6d0ed8
- *   PHPUnit_Framework_TestCase -> TestCase
- * //class FunctionsTest extends PHPUnit_Framework_TestCase
- */
-
-class FunctionsTest extends TestCase
+trait QithubSetup
 {
     public function setUp()
     {
-        //
-    }
+       // Warning も確実にエラーとして扱うようにする
+        set_error_handler(function ($errno, $errstr, $errfile, $errline) {
+            $msg  = 'Error #' . $errno . ': ';
+            $msg .= $errstr . " on line " . $errline . " in file " . $errfile;
+            throw new RuntimeException($msg);
+        });
+    }    
+}
 
-    /*
-     * テストを行うメソッド名は「test*」
-     */    
-    public function testReturnMessage()
+class StringInsertionTest extends TestCase
+{
+    use QithubSetup;
+
+    public function testIsSame()
     {
         $message = 'Hello, World!';
-        $result  = Qithub\Core\return_message($message);
+        $result  = Qithub\fn\return_message($message);
 
-        $this->assertTrue($result === 'Hello, World!');
+        $this->assertSame($message, $result);
     }
 
-
-    /*
-     * 未実装・テスト準備済みは`markTestIncomplete(理由)`メソッドを使う
-     */    
-    public function testUnknown()
+    public function testIsString()
     {
-        $this->markTestIncomplete('unknown関数は準備中です');        
-    }
+        $message = 'Hello, World!';
+        $result  = Qithub\fn\return_message($message);
 
+        $this->assertTrue(is_string($result));
+    }
 }
