@@ -1,12 +1,14 @@
 {
     "name": "qithub/core",
     "description": "Core class for Qithub-BOT.",
+    "keywords": ["qithub","bot","qiitadon","qiita"],
     "type": "library",
     "license": "CC-BY-SA-4.0",
     "authors": [
         {
             "name": "Qithub-ORG",
-            "email": "qithub@keinos.com"
+            "email": "qithub@keinos.com",
+            "homepage": "https://Qithub.tk/"
         }
     ],
     "require-dev": {
@@ -15,5 +17,10 @@
     },
     "conflict": {
         "phpunit/php-timer": ">=2"
+    },
+    "autoload": {
+        "psr-0": {
+            "": "."
+        }
     }
 }
