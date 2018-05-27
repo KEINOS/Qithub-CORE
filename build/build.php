@@ -14,9 +14,33 @@ const PATH_FILE_BOX  = PATH_DIR_CURNT . NAME_FILE_BOX;
 const PATH_FILE_CONF = PATH_DIR_CURNT . NAME_FILE_CONF;
 const PATH_FILE_MAIN = PATH_DIR_SRC   . NAME_FILE_MAIN;
 
+// Edit here to export box.json file
+$option = [
+    "chmod"       => "0755",
+    "base-path"   => "../",
+    "directories" => [
+        "src",
+    ],
+    "main"    => "src/index.php",
+    "output"  => "bin/Qithub-CORE.phar",
+    "stub"    => true,
+    "shebang" => null,
+    "git-version"      => "git_version",
+    "git-commit"       => "git_commit_long",
+    "git-commit-short" => "git_commit_short",
+    "git-tag"          => "git_tag",
+    "datetime"         => "date_build",
+];
+
+//$json = json_encode($option, JSON_PRETTY_PRINT|JSON_UNESCAPED_SLASHES);
+$json = json_encode($option, JSON_PRETTY_PRINT);
+if (! file_put_contents(PATH_FILE_CONF, $json)) {
+    echo 'Error: Can not write JSON file.' . PHP_EOL;
+}
+
 // check dependencies
 $with = "with";
-switch(true){
+switch (true) {
     case (! file_exists(PATH_FILE_BOX)):
         echo "You need '{$with(PATH_FILE_BOX)}' to build the app." . PHP_EOL;
         echo 'Run `install.php` to get the latest `box.phar`.' . PHP_EOL;
@@ -28,7 +52,7 @@ switch(true){
         echo "You need '{$with(PATH_FILE_MAIN)}' to build the app." . PHP_EOL;
         die;
     default:
-        break;    
+        break;
 }
 
 // create command

@@ -1,32 +1,40 @@
 <?php
-namespace Qithub\Core;
+namespace Qithub;
 
-include('Functions.php');
-include('Classes.php');
+//include_once('bin/Qithub-CORE.phar');
+include_once('Constants.php');
+include_once('Functions.php');
+include_once('Classes.php');
 
-$msg = 'Hello World!';
+$msg = 'Hello World.';
 
-/* Function */
-echo return_message($msg) . PHP_EOL;
-
-/* Class */
-echo MyClass::returnMessage($msg) . PHP_EOL;
-
-$test = new MyClass();
-$test->echoMessage($msg);
-echo PHP_EOL;
-
-
-/* Box Tips (Git info replacement) */
-/* 以下は Box で Build すると自動的に置き換わります */
-echo '@git_version@' . PHP_EOL;
-echo '@git_commit_long@' . PHP_EOL;
-echo '@git_commit_short@' . PHP_EOL;
-echo '@git_tag@' . PHP_EOL;
-echo '@date_build@' . PHP_EOL;
-
-if (is_phar()) {
-    echo 'Running via phar.' . PHP_EOL;
-} else {
+if (! is_phar()) {
     echo 'Running PHP directly.' . PHP_EOL;
+    /* Function */
+    echo return_message($msg) . PHP_EOL;
+
+    /* Class */
+    //echo MyClass::returnMessage($msg) . PHP_EOL;
+
+    $array = [
+        "hoge" => 'hoge',
+    ];
+
+    echo encode($array) . PHP_EOL;
+
+    set_option('one');
+    set_option('two');
+    set_option('three');
+
+    print_r(get_value());
+
+    $test = new Core();
+    echo 'Version(Norm): ', $test->getVersion(), PHP_EOL;
+    echo 'Version(Full): ', PHP_EOL;
+    $version = explode(PHP_EOL, $test->getVersion(true));
+    foreach ($version as $line) {
+        echo "\t", trim($line), PHP_EOL;
+    }
+} else {
+    //echo 'Running via phar.' . PHP_EOL;
 }
