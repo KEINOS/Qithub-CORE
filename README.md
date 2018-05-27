@@ -1,14 +1,46 @@
 [![Build Status](https://travis-ci.org/Qithub-BOT/Qithub-CORE.svg?branch=master)](https://travis-ci.org/Qithub-BOT/Qithub-CORE)
 
-## このリポジトリについて
+## Qithub-CORE とは
 
-このリポジトリは **Qithub コマンドを実行して結果を返す**だけの PHP スクリプトです。
+`Qithub-CORE` は `Composer` でインストール可能な PHP ライブラリです。
 
-Qithub コマンドの動作チェックおよび Qithub-API のエンジンとして使われます。
+主に `Qithub-BOT` を構成する `Qithub-API` や `Qithub-CMD` などのクラスの継承元となる親クラスと、共通する関数を提供しています。
 
-## Qithub-CORE の使い方
+## `composer.json` の記述例
 
-1. 準備中...
+自分の PHP アプリで Qithub-CORE ライブラリを使いたい場合は、自分のプロジェクトの `composer.json` に以下の内容を追記してください。
+
+```
+{
+    "repositories": [
+        {
+            "type": "vcs",
+            "url": "git@github.com:Qithub-BOT/Qithub-CORE.git"
+        }
+    ],
+    "require": {
+        "qithub/core": "master@dev"
+    }
+}
+```
+
+**Note:** Qithub-BOT 関連の PHP ライブラリは GitHub のリポジトリで提供しています。そのため composer のデフォルトの検索先のリポジトリである **Packagist からはインストールできない**ので、 "composer.json" の "repositories" 要素に GitHub のリポジトリを追加する必要があります。
+
+## Qithub-CORE のインストール
+
+`composer.json` に上記内容を記載したのち、`$ composer install` を実行すると、`vendor/qithub/core` ディレクトリに、このリポジトリの内容（ライブラリ）がインストールされます。
+
+以降は `$ composer update` を実行するだけで、Qithub-CORE リポジトリ（の`master`ブランチ）の最新版がダウンロードされます。
+
+## Qithub-CORE の依存関係
+
+Qihub-CORE 自体は依存ライブラリの必要のない Pure PHP で書かれており、PHP 5.6 以上で動作することを目標としています。
+
+このライブラリのパッケージ（composer.json）にある依存情報（"require-dev"要素）は、Qithub-CORE の開発でユニット・テストに使われるためのもので、本体そのものの動作には影響ありません。
+
+## ライブラリの利用方法
+
+検証中
 
 ## ディレクトリ構成
 
@@ -30,26 +62,11 @@ Qithub-CORE/
 		┗━ ClassesTest.php
 ```
 
-## ローカルに開発とテスト環境を作る
+## Qithub-CORE の開発に参加する
 
-1. このリポジトリを `fork` します。
-1. `Fork` したリポジトリをローカルに `clone` します。
-1. クローンしたリポジトリにカレントディレクトリを移します。
-1. 自分の環境の PHP バージョンを確認します。
-1. `.travis.yml` に自分の PHP バージョンを追記します。
-1. `composer.lock` ファイルを削除します。（`$ rm composer.lock`）
-1. `composer` コマンドが使えるのを確認します。（`$ composer --version`）
-    - `composer.phar` をダウンロードして `$ php path/to/composer.phar --version` でも OK。
-1. 開発環境をインストールします。
-    - `$ composer install`
-1. `vendor` ディレクトリが出来たのを確認し、PHPUnit のバージョンを確認します。
-    - `$ vendor/bin/phpunit --version`
+Qithub-CORE ライブラリを利用する側でなく、改善・開発・リファクタに参加したい場合は、このリポジトリを `clone` して `PR` してください。
 
-## テストを実行する
-
-1. `tests` ディレクトリ内のテストを実行する。
-    - `$ vendor/bin/phpunit tests`
-    - 「OK, but incomplete, skipped, or risky tests!」と出れば OK。<br>記述中の「..I」は、３つのテストのうち２つがパスして１つをスキップしたことを意味します。
+まだ `git` や GitHub でのコラボレーションに慣れていない方は、具体的な参加方法を Qithub-ORG の wiki に記載しますので、遠慮なく試してみてください。
 
 ## 検証環境
 
