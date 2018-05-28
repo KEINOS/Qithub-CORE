@@ -28,7 +28,7 @@
 
 ## Qithub-CORE のインストール
 
-`composer.json` に上記内容を記載したのち、`$ composer install` を実行すると、`vendor/qithub/core` ディレクトリに、このリポジトリの内容（ライブラリ）がインストールされます。
+`composer.json` に上記内容を記載したのち、`$ composer install` を実行すると、`vendor/qithub/core/` ディレクトリに、このリポジトリの内容（ライブラリ）がインストールされます。
 
 以降は `$ composer update` を実行するだけで、Qithub-CORE リポジトリ（の`master`ブランチ）の最新版がダウンロードされます。
 
